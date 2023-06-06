@@ -1,4 +1,5 @@
 import 'package:fairerweb/config/app_color.dart';
+import 'package:fairerweb/ui/question_page.dart';
 import 'package:fairerweb/ui/widgets/cta_button.dart';
 import 'package:fairerweb/ui/widgets/init_button.dart';
 import 'package:flutter/cupertino.dart';
@@ -44,7 +45,7 @@ class InitPage extends StatelessWidget {
               Expanded(
                 child: Container(
                   alignment: Alignment.bottomCenter,
-                  child: InitButton()
+                  child: GestureDetector(onTap: () => Get.to(()=>QuestionPage()),child: InitButton())
                 ),
               ),
             ],

@@ -7,9 +7,7 @@ import 'binding/init_binding.dart';
 import 'config/app_theme.dart';
 import 'language/app_translations.dart';
 
-void main() {
-  runApp(const FairerWeb());
-}
+void main() => runApp(FairerWeb());
 
 class FairerWeb extends StatelessWidget {
   const FairerWeb({super.key});
