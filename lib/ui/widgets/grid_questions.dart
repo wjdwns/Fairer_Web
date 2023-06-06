@@ -16,6 +16,7 @@ class GridQuestions extends StatelessWidget {
     return Column(
       children: [
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               height: 177,
@@ -70,6 +71,7 @@ class GridQuestions extends StatelessWidget {
           height: 9,
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               height: 177,

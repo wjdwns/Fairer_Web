@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 class CTAButton extends StatelessWidget {
   final bool isEnable;
 
-  const CTAButton({super.key, required this.isEnable});
+  CTAButton({super.key, required this.isEnable});
   @override
   Widget build(BuildContext context) {
     return Container(

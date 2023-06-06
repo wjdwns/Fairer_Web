@@ -50,12 +50,10 @@ class QuestionPage extends GetView<GlobalController> {
             const SizedBox(
               height: 52,
             ),
-            SizedBox(
-                width: Get.width,
-                child: Center(
-                    child: GridQuestions(
-                  page: controller.page.value,
-                ))),
+            Center(
+                child: GridQuestions(
+              page: controller.page.value,
+            )),
             const Spacer(),
             CTAButton(isEnable: false)
           ],

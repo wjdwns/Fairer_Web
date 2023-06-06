@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 class ProgressBar extends StatelessWidget {
   final int flexValue;
 
-  const ProgressBar({super.key, required this.flexValue});
+  ProgressBar({super.key, required this.flexValue});
 
   @override
   Widget build(BuildContext context) {
