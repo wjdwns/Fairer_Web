@@ -92,6 +92,9 @@ flutter:
     - family: PretendardSemiBold
       fonts:
         - asset: assets/fonts/Pretendard-SemiBold.ttf
+    - family: NanumSquareNeoOTF
+      fonts:
+        - asset: assets/fonts/NanumSquareNeoOTF-Hv.otf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

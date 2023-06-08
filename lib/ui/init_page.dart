@@ -1,4 +1,5 @@
 import 'package:fairerweb/config/app_color.dart';
+import 'package:fairerweb/config/app_theme.dart';
 import 'package:fairerweb/ui/question_page.dart';
 import 'package:fairerweb/ui/widgets/cta_button.dart';
 import 'package:fairerweb/ui/widgets/init_button.dart';
@@ -15,7 +16,7 @@ class InitPage extends StatelessWidget {
         child: Container(
           width: Get.width,
           height: Get.height,
-          padding: const EdgeInsets.symmetric(vertical: 24,horizontal: 24),
+          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 24),
           color: Palette.fairerBlue,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -36,17 +37,48 @@ class InitPage extends StatelessWidget {
                   alignment: Alignment.center,
                   child: Column(
                     children: [
-                      Text("init_title".tr,style: const TextStyle(fontSize: 44,color: Palette.white),textAlign: TextAlign.center,),
-                      Text("init_question".tr,style: const TextStyle(fontSize: 18,color: Palette.white),textAlign: TextAlign.center,)
+                      Stack(
+                        children: [
+                          Text(
+                            "init_title".tr,
+                            style: TextStyle(
+                                fontFamily: CustomTextStyle.nanum,
+                                fontSize: 44,
+                                height: 1.4,
+                                foreground: Paint()
+                                  ..style = PaintingStyle.stroke
+                                  ..strokeWidth = 10
+                                  ..color = Palette.white),
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(
+                            "init_title".tr,
+                            style: const TextStyle(
+                              fontFamily: CustomTextStyle.nanum,
+                              fontSize: 44,
+                              height: 1.4,
+                              color: Palette.fairerBlue,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 17,
+                      ),
+                      Text(
+                        "init_question".tr,
+                        style: const TextStyle(fontSize: 18, color: Palette.white),
+                        textAlign: TextAlign.center,
+                      )
                     ],
                   ),
                 ),
               ),
               Expanded(
                 child: Container(
-                  alignment: Alignment.bottomCenter,
-                  child: GestureDetector(onTap: () => Get.to(()=>QuestionPage()),child: InitButton())
-                ),
+                    alignment: Alignment.bottomCenter,
+                    child: GestureDetector(onTap: () => Get.to(() => QuestionPage()), child: InitButton())),
               ),
             ],
           ),
