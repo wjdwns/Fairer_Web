@@ -28,7 +28,7 @@ class InitPage extends StatelessWidget {
                 child: Container(
                   alignment: Alignment.topCenter,
                   child: SvgPicture.asset(
-                    "icons/ic_fairer.svg",
+                    "assets/icons/ic_fairer.svg",
                   ),
                 ),
               ),

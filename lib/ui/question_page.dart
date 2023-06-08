@@ -26,7 +26,7 @@ class QuestionPage extends GetView<GlobalController> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SvgPicture.asset("icons/ic_back.svg", width: 24, height: 24),
+                SvgPicture.asset("assets/icons/ic_back.svg", width: 24, height: 24),
                 const SizedBox(
                   height: 28,
                 ),
