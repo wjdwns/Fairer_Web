@@ -1,3 +1,6 @@
+import 'package:fairerweb/config/app_color.dart';
+import 'package:fairerweb/config/app_theme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class GlobalController extends GetxController {
@@ -11,31 +14,128 @@ class GlobalController extends GetxController {
   }
 
   getQuestionTitle() {
+    const wordStyle = TextStyle(color: Palette.fairerBlue);
+    const leftOverStyle = CustomTextStyle.H2;
     switch (page.value) {
       case 1:
-        return "page1_question".tr;
+        {
+          const wordToStyle = '가장 많이 하는 활동';
+          final spans = _getSpans("page1_question".tr, wordToStyle, wordStyle);
+          return RichText(
+            text: TextSpan(
+              style: leftOverStyle,
+              children: spans,
+            ),
+          );
+        }
       case 2:
-        return "page2_question".tr;
+        {
+          const wordToStyle = '가장 좋아하는 공간';
+          final spans = _getSpans("page2_question".tr, wordToStyle, wordStyle);
+          return RichText(
+            text: TextSpan(
+              style: leftOverStyle,
+              children: spans,
+            ),
+          );
+        }
       case 3:
-        return "page3_question".tr;
+        {
+          const wordToStyle = '가장 큰 걱정거리';
+          final spans = _getSpans("page3_question".tr, wordToStyle, wordStyle);
+          return RichText(
+            text: TextSpan(
+              style: leftOverStyle,
+              children: spans,
+            ),
+          );
+        }
       case 4:
-        return "page4_question".tr;
+        {
+          const wordToStyle = '가장 중요한 것';
+          final spans = _getSpans("page4_question".tr, wordToStyle, wordStyle);
+          return RichText(
+            text: TextSpan(
+              style: leftOverStyle,
+              children: spans,
+            ),
+          );
+        }
       case 5:
-        return "page5_question".tr;
+        {
+          const wordToStyle = '청소도구';
+          final spans = _getSpans("page5_question".tr, wordToStyle, wordStyle);
+          return RichText(
+            text: TextSpan(
+              style: leftOverStyle,
+              children: spans,
+            ),
+          );
+        }
       case 6:
-        return "page6_question".tr;
+        {
+          const wordToStyle = '집안일';
+          final spans = _getSpans("page6_question".tr, wordToStyle, wordStyle);
+          return RichText(
+            text: TextSpan(
+              style: leftOverStyle,
+              children: spans,
+            ),
+          );
+        }
       case 7:
-        return "page7_question".tr;
+        {
+          const wordToStyle = '시작하려면 무엇이 필요';
+          final spans = _getSpans("page7_question".tr, wordToStyle, wordStyle);
+          return RichText(
+            text: TextSpan(
+              style: leftOverStyle,
+              children: spans,
+            ),
+          );
+        }
       case 8:
-        return "page8_question".tr;
+        {
+          const wordToStyle = '가장 싫어하는 일';
+          final spans = _getSpans("page8_question".tr, wordToStyle, wordStyle);
+          return RichText(
+            text: TextSpan(
+              style: leftOverStyle,
+              children: spans,
+            ),
+          );
+        }
       case 9:
-        return "page9_question".tr;
+        {
+          const wordToStyle = '가장 잘하는 것';
+          final spans = _getSpans("page9_question".tr, wordToStyle, wordStyle);
+          return RichText(
+            text: TextSpan(
+              style: leftOverStyle,
+              children: spans,
+            ),
+          );
+        }
       case 10:
-        return "page10_question".tr;
+        {
+          return Text(
+            "page10_question".tr,
+            style: leftOverStyle,
+          );
+        }
       case 11:
-        return "page11_question".tr;
+        {
+          const wordToStyle = '마치고 나면';
+          final spans = _getSpans("page11_question".tr, wordToStyle, wordStyle);
+          return RichText(
+            text: TextSpan(
+              style: leftOverStyle,
+              children: spans,
+            ),
+          );
+        }
       default:
-        return "";
+        return const Text("");
     }
   }
 
@@ -153,5 +253,41 @@ class GlobalController extends GetxController {
       default:
         return "";
     }
+  }
+
+  List<TextSpan> _getSpans(String text, String matchWord, TextStyle style) {
+    List<TextSpan> spans = [];
+    int spanBoundary = 0;
+
+    do {
+      // 전체 String 에서 키워드 검색
+      final startIndex = text.indexOf(matchWord, spanBoundary);
+
+      // 전체 String 에서 해당 키워드가 더 이상 없을때 마지막 KeyWord부터 끝까지의 TextSpan 추가
+      if (startIndex == -1) {
+        spans.add(TextSpan(text: text.substring(spanBoundary)));
+        return spans;
+      }
+
+      // 전체 String 사이에서 발견한 키워드들 사이의 text에 대한 textSpan 추가
+      if (startIndex > spanBoundary) {
+        print(text.substring(spanBoundary, startIndex));
+        spans.add(TextSpan(text: text.substring(spanBoundary, startIndex)));
+      }
+
+      // 검색하고자 했던 키워드에 대한 textSpan 추가
+      final endIndex = startIndex + matchWord.length;
+      final spanText = text.substring(startIndex, endIndex);
+      spans.add(TextSpan(text: spanText, style: style));
+
+      // mark the boundary to start the next search from
+      spanBoundary = endIndex;
+
+      // continue until there are no more matches
+    }
+    //String 전체 검사
+    while (spanBoundary < text.length);
+
+    return spans;
   }
 }

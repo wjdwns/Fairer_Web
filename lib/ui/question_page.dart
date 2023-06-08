@@ -50,10 +50,7 @@ class QuestionPage extends GetView<GlobalController> {
                 const SizedBox(
                   height: 9,
                 ),
-                Text(
-                  controller.getQuestionTitle(),
-                  style: CustomTextStyle.H2,
-                ),
+                controller.getQuestionTitle(),
                 const SizedBox(
                   height: 52,
                 ),
