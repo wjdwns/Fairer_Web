@@ -77,17 +77,11 @@ class ResultPage extends StatelessWidget {
               decoration: BoxDecoration(color: Palette.result1BoxColor, borderRadius: BorderRadius.circular(24)),
               child: Column(
                 children: [
-                  Flex(
-                    direction: Axis.horizontal,
-                    children: [Text("이 유형의 사람들은 요리를 좋아하고, 무엇을 요리할지 매일 생각하는 것이 일상입니다.")],
-                  ),
+                  Text("이 유형의 사람들은 요리를 좋아하고, 무엇을 요리할지 매일 생각하는 것이 일상입니다."),
                   SizedBox(
                     height: 12,
                   ),
-                  Flex(
-                    direction: Axis.horizontal,
-                    children: [Text("요리 장비와 레시피에 대한 지식을 가지고 있으며, 가족이나 친구들과 식사를 즐기는 것을 좋아합니다.")],
-                  ),
+                  Text("요리 장비와 레시피에 대한 지식을 가지고 있으며, 가족이나 친구들과 식사를 즐기는 것을 좋아합니다."),
                 ],
               ),
             ),
@@ -97,7 +91,7 @@ class ResultPage extends StatelessWidget {
             Container(
               width: Get.width,
               padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-              decoration: BoxDecoration(color: Palette.result1BoxColor, borderRadius: BorderRadius.circular(24)),
+              decoration: BoxDecoration(color: Palette.white, borderRadius: BorderRadius.circular(24)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -105,23 +99,19 @@ class ResultPage extends StatelessWidget {
                   SizedBox(
                     height: 3,
                   ),
-                  Expanded(
-                    child: Text(
-                      "집안이 계획부터 분담까지 페어러와 함께하세요",
-                      style: TextStyle(fontFamily: CustomTextStyle.Regular, fontSize: 12, color: Palette.mtGrey1000),
-                    ),
+                  Text(
+                    "집안이 계획부터 분담까지 페어러와 함께하세요",
+                    style: TextStyle(fontFamily: CustomTextStyle.Regular, fontSize: 12, color: Palette.mtGrey1000),
                   ),
                   SizedBox(
                     height: 6,
                   ),
-                  Expanded(
-                    child: Row(
-                      children: [
-                        Text("구글스토어에"),
-                        SvgPicture.asset("assets/icons/ic_result_fairer.svg"),
-                        Text("를 검색해보세요!")
-                      ],
-                    ),
+                  Row(
+                    children: [
+                      Text("구글스토어에"),
+                      SvgPicture.asset("assets/icons/ic_result_fairer.svg"),
+                      Text("를 검색해보세요!")
+                    ],
                   ),
                 ],
               ),
