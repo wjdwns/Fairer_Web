@@ -15,7 +15,8 @@ class GlobalController extends GetxController {
 
   getQuestionTitle() {
     const wordStyle = TextStyle(color: Palette.fairerBlue);
-    const leftOverStyle = CustomTextStyle.H2;
+    const leftOverStyle = TextStyle(
+        fontFamily: CustomTextStyle.Bold, fontSize: 20, letterSpacing: (-2), height: 1.4, color: Palette.black);
     switch (page.value) {
       case 1:
         {
