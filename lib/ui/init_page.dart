@@ -28,16 +28,21 @@ class InitPage extends StatelessWidget {
             Column(
               children: [
                 Flexible(
-                  child: Container(),
                   flex: 5,
-                ),
-                Flexible(
-                  child: SvgPicture.asset("assets/icons/ic_init_background.svg"),
-                  flex: 18,
-                ),
-                Flexible(
                   child: Container(),
+                ),
+                Flexible(
+                  flex: 18,
+                  child: Opacity(
+                      opacity: 0.8,
+                      child: SvgPicture.asset(
+                        "assets/icons/ic_init_background.svg",
+                        width: Get.width,
+                      )),
+                ),
+                Flexible(
                   flex: 6,
+                  child: Container(),
                 )
               ],
             ),
