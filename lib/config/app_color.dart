@@ -57,5 +57,15 @@ class Palette {
   static const Color negative10 = Color(0xFFFFD2DD);
   static const Color negative20 = Color(0xFFE93B65);
 
+  static const Color resultTitleColor = Color(0xFF1D2105);
+  static const Color result1BackgroundColor = Color(0xFFDBFF00);
+  static const Color result1TextColor = Color(0xFF92A51C);
+  static const Color result1BoxColor = Color(0xFFF5FFBB);
+  static const Color result3BackgroundColor = Color(0xFFEFEFEF);
+  static const Color result3TextColor = Color(0xFFC1C1C1);
+  static const Color result3BoxColor = Color(0xFFE6E6E6);
+  static const Color result5BackgroundColor = Color(0xFF7B61FF);
+  static const Color result5TextColor = Color(0xFFE0DAFF);
+  static const Color result5BoxColor = Color(0xFF856DFF);
 // HOME Button Color
 }

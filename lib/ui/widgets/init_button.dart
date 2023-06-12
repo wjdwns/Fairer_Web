@@ -6,7 +6,7 @@ class InitButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Palette.white,
+      decoration: BoxDecoration(color: Palette.white, borderRadius: BorderRadius.circular(8)),
       width: Get.width,
       height: 56,
       child: Center(

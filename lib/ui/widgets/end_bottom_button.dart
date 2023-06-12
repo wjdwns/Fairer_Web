@@ -1,9 +1,13 @@
+import 'package:fairerweb/controller/global_controller.dart';
+import 'package:fairerweb/ui/init_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../config/app_color.dart';
 
 class EndBottonButton extends StatelessWidget {
+  final controller = Get.find<GlobalController>();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,9 +17,11 @@ class EndBottonButton extends StatelessWidget {
         children: [
           Flexible(
             child: InkWell(
-                onTap: () {},
+                onTap: () {
+                  Get.offAll(() => InitPage());
+                },
                 child: Container(
-                  color: Palette.fairerBlue,
+                  decoration: BoxDecoration(color: Palette.fairerBlue, borderRadius: BorderRadius.circular(8)),
                   height: 44,
                   child: Center(
                     child: Text(
@@ -32,7 +38,7 @@ class EndBottonButton extends StatelessWidget {
             child: InkWell(
                 onTap: () {},
                 child: Container(
-                  color: Palette.fairerBlue,
+                  decoration: BoxDecoration(color: Palette.fairerBlue, borderRadius: BorderRadius.circular(8)),
                   height: 44,
                   child: Center(
                     child: Text(

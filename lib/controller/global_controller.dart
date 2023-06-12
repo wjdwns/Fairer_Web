@@ -290,4 +290,27 @@ class GlobalController extends GetxController {
 
     return spans;
   }
+
+  getResult() {
+    final counts = <int, int>{};
+    for (var value in answer) {
+      if (counts.containsKey(value)) {
+        counts[value] = counts[value]! + 1;
+      } else {
+        counts[value] = 1;
+      }
+    }
+
+    int maxCount = 0;
+    int mostFrequentValue = 0;
+
+    counts.forEach((value, count) {
+      if (count > maxCount) {
+        maxCount = count;
+        mostFrequentValue = value;
+      }
+    });
+    print(mostFrequentValue);
+    return mostFrequentValue;
+  }
 }
