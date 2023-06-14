@@ -13,6 +13,19 @@ class GlobalController extends GetxController {
     answer.addAll(List.generate(11, (index) => 0));
   }
 
+  getBoldTextSpan(String text, String textBold, Color textColor) {
+    const wordStyle = TextStyle(fontFamily: CustomTextStyle.Bold);
+    final leftOverStyle = TextStyle(fontFamily: CustomTextStyle.Regular, fontSize: 12, height: 1.5, color: textColor);
+    final wordToStyle = textBold;
+    final spans = _getSpans(text, wordToStyle, wordStyle);
+    return RichText(
+      text: TextSpan(
+        style: leftOverStyle,
+        children: spans,
+      ),
+    );
+  }
+
   getQuestionTitle() {
     const wordStyle = TextStyle(color: Palette.fairerBlue);
     const leftOverStyle = TextStyle(

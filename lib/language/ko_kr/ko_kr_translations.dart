@@ -77,6 +77,9 @@ final Map<String, String> koKR = {
   'end_page_type_semi_title3': '우리집 최고',
   'end_page_type_semi_title4': '예쁜게 좋은거다',
   'end_page_type_semi_title5': '나에게 맡겨',
+  'end_page_fairer_text1': '집안일 계획부터 분담까지 페어러와 함께하세요',
+  'end_page_fairer_text2': '구글스토어에',
+  'end_page_fairer_text3': '를 검색해보세요!',
 
   //result
   'result1_text1': '이 유형의 사람들은 요리를 좋아하고, 무엇을 요리할지 매일 생각하는 것이 일상입니다.',

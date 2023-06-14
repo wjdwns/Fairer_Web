@@ -1,4 +1,5 @@
 import 'package:fairerweb/binding/init_binding.dart';
+import 'package:fairerweb/config/app_theme.dart';
 import 'package:fairerweb/controller/global_controller.dart';
 import 'package:fairerweb/ui/init_page.dart';
 import 'package:flutter/material.dart';
@@ -6,8 +7,11 @@ import 'package:get/get.dart';
 
 import '../../config/app_color.dart';
 
-class EndBottonButton extends StatelessWidget {
+class EndBottomButton extends StatelessWidget {
   final controller = Get.find<GlobalController>();
+  final bool colorValue;
+
+  EndBottomButton({super.key, required this.colorValue});
 
   @override
   Widget build(BuildContext context) {
@@ -19,16 +23,20 @@ class EndBottonButton extends StatelessWidget {
           Flexible(
             child: InkWell(
                 onTap: () async {
-                  await Get.deleteAll();
+                  await Get.deleteAll(force: true);
                   await Get.offAll(() => InitPage(), binding: InitBinding());
                 },
                 child: Container(
-                  decoration: BoxDecoration(color: Palette.fairerBlue, borderRadius: BorderRadius.circular(8)),
+                  decoration: BoxDecoration(
+                      color: colorValue ? Palette.fairerBlue : Palette.white, borderRadius: BorderRadius.circular(8)),
                   height: 44,
                   child: Center(
                     child: Text(
                       'end_page_restart'.tr,
-                      style: const TextStyle(fontSize: 16, color: Palette.white),
+                      style: TextStyle(
+                          fontFamily: CustomTextStyle.SemiBold,
+                          fontSize: 16,
+                          color: colorValue ? Palette.white : Palette.mtGrey800),
                     ),
                   ),
                 )),
@@ -40,12 +48,16 @@ class EndBottonButton extends StatelessWidget {
             child: InkWell(
                 onTap: () {},
                 child: Container(
-                  decoration: BoxDecoration(color: Palette.fairerBlue, borderRadius: BorderRadius.circular(8)),
+                  decoration: BoxDecoration(
+                      color: colorValue ? Palette.fairerBlue : Palette.white, borderRadius: BorderRadius.circular(8)),
                   height: 44,
                   child: Center(
                     child: Text(
                       'end_page_share'.tr,
-                      style: const TextStyle(fontSize: 16, color: Palette.white),
+                      style: TextStyle(
+                          fontFamily: CustomTextStyle.SemiBold,
+                          fontSize: 16,
+                          color: colorValue ? Palette.white : Palette.mtGrey800),
                     ),
                   ),
                 )),

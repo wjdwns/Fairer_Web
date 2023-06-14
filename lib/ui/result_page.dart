@@ -15,13 +15,15 @@ class ResultPage extends StatelessWidget {
     final ResultModel resultColorModel = setResultColor(result);
     return Scaffold(
       backgroundColor: resultColorModel.backgroundColor,
-      bottomSheet: Container(
+      bottomNavigationBar: Container(
         color: resultColorModel.backgroundColor,
         padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 24),
-        child: EndBottonButton(),
+        child: EndBottomButton(
+          colorValue: result == 1 || result == 3 ? true : false,
+        ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.fromLTRB(33, 34, 33, 87),
+        padding: const EdgeInsets.fromLTRB(33, 34, 33, 80),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -29,14 +31,14 @@ class ResultPage extends StatelessWidget {
               "end_page_my_type".tr,
               style: TextStyle(fontFamily: CustomTextStyle.Regular, fontSize: 16, color: resultColorModel.topTextColor),
             ),
-            SizedBox(
+            const SizedBox(
               height: 8,
             ),
             Text(
-              "end_page_type_title1".tr,
+              resultColorModel.titleText,
               style: TextStyle(fontFamily: CustomTextStyle.SemiBold, color: resultColorModel.titleColor, fontSize: 36),
             ),
-            SizedBox(
+            const SizedBox(
               height: 11,
             ),
             Container(
@@ -44,15 +46,15 @@ class ResultPage extends StatelessWidget {
               decoration:
                   BoxDecoration(color: resultColorModel.semiTitleBoxColor, borderRadius: BorderRadius.circular(33)),
               child: Text(
-                "end_page_type_semi_title1".tr,
+                resultColorModel.semiTitleText,
                 style: TextStyle(
                     fontFamily: CustomTextStyle.SemiBold, color: resultColorModel.semiTitleColor, fontSize: 14),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 22,
             ),
-            Container(
+            SizedBox(
               width: 242,
               height: 242,
               child: Stack(
@@ -60,21 +62,21 @@ class ResultPage extends StatelessWidget {
                   Align(
                     alignment: Alignment.center,
                     child: CustomPaint(
-                      size: Size(242, 242), // 원의 크기
+                      size: const Size(242, 242), // 원의 크기
                       painter: CirclePainter(resultColorModel.outerRoundColor), // 원을 그리는 커스텀 페인터
                     ),
                   ),
                   Align(
                     alignment: Alignment.center,
                     child: CustomPaint(
-                      size: Size(196, 196), // 원의 크기
+                      size: const Size(196, 196), // 원의 크기
                       painter: CirclePainter(resultColorModel.middleRoundColor), // 원을 그리는 커스텀 페인터
                     ),
                   ),
                   Align(
                     alignment: Alignment.center,
                     child: CustomPaint(
-                      size: Size(150, 150), // 원의 크기
+                      size: const Size(150, 150), // 원의 크기
                       painter: CirclePainter(resultColorModel.innerRoundColor), // 원을 그리는 커스텀 페인터
                     ),
                   ),
@@ -82,49 +84,60 @@ class ResultPage extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Container(
               width: Get.width,
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
               decoration: BoxDecoration(color: resultColorModel.boxColor, borderRadius: BorderRadius.circular(24)),
               child: Column(
                 children: [
-                  Text("이 유형의 사람들은 요리를 좋아하고, 무엇을 요리할지 매일 생각하는 것이 일상입니다."),
-                  SizedBox(
+                  controller.getBoldTextSpan(
+                      resultColorModel.text1, resultColorModel.text1Bold, resultColorModel.textColor),
+                  const SizedBox(
                     height: 12,
                   ),
-                  Text("요리 장비와 레시피에 대한 지식을 가지고 있으며, 가족이나 친구들과 식사를 즐기는 것을 좋아합니다."),
+                  controller.getBoldTextSpan(
+                      resultColorModel.text2, resultColorModel.text2Bold, resultColorModel.textColor),
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Container(
               width: Get.width,
-              padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
               decoration: BoxDecoration(color: Palette.white, borderRadius: BorderRadius.circular(24)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SvgPicture.asset("assets/icons/ic_result_text.svg"),
-                  SizedBox(
+                  const SizedBox(
                     height: 3,
                   ),
                   Text(
-                    "집안일 계획부터 분담까지 페어러와 함께하세요",
-                    style: TextStyle(fontFamily: CustomTextStyle.Regular, fontSize: 12, color: Palette.mtGrey1000),
+                    "end_page_fairer_text1".tr,
+                    style:
+                        const TextStyle(fontFamily: CustomTextStyle.Regular, fontSize: 12, color: Palette.mtGrey1000),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 6,
                   ),
                   Row(
                     children: [
-                      Text("구글스토어에"),
+                      Text(
+                        "end_page_fairer_text2".tr,
+                        style: const TextStyle(
+                            fontFamily: CustomTextStyle.SemiBold, fontSize: 14, color: Color(0xFF1F1F1F)),
+                      ),
                       SvgPicture.asset("assets/icons/ic_result_fairer.svg"),
-                      Text("를 검색해보세요!")
+                      Text(
+                        "end_page_fairer_text3".tr,
+                        style: const TextStyle(
+                            fontFamily: CustomTextStyle.SemiBold, fontSize: 14, color: Color(0xFF1F1F1F)),
+                      )
                     ],
                   ),
                 ],
