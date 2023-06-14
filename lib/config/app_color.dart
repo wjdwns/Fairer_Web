@@ -57,15 +57,60 @@ class Palette {
   static const Color negative10 = Color(0xFFFFD2DD);
   static const Color negative20 = Color(0xFFE93B65);
 
-  static const Color resultTitleColor = Color(0xFF1D2105);
   static const Color result1BackgroundColor = Color(0xFFDBFF00);
-  static const Color result1TextColor = Color(0xFF92A51C);
+  static const Color result1TopTextColor = Color(0xFF92A51C);
+  static const Color result1TitleColor = Color(0xFF1D2105);
+  static const Color result1SemiTitleColor = Color(0xFF1D2105);
+  static const Color result1SemiTitleBoxColor = Color(0xFFF7FFB8);
+  static const Color result1OuterRoundColor = Color(0xFFEDFF7D);
+  static const Color result1MiddleRoundColor = Color(0xFFF5FFB6);
+  static const Color result1InnerRoundColor = Color(0xFFFBFFE0);
+  static const Color result1TextColor = Color(0xFF1B1B1B);
   static const Color result1BoxColor = Color(0xFFF5FFBB);
+
+  static const Color result2BackgroundColor = fairerBlue;
+  static const Color result2TopTextColor = Color(0xFF79AFFF);
+  static const Color result2TitleColor = white;
+  static const Color result2SemiTitleColor = Color(0xFF3A4110);
+  static const Color result2SemiTitleBoxColor = positive10;
+  static const Color result2OuterRoundColor = Color(0xFF227AFF);
+  static const Color result2MiddleRoundColor = Color(0xFF3787FF);
+  static const Color result2InnerRoundColor = Color(0xFF62A1FF);
+  static const Color result2TextColor = white;
+  static const Color result2BoxColor = Color(0xFF2D81FF);
+
   static const Color result3BackgroundColor = Color(0xFFEFEFEF);
-  static const Color result3TextColor = Color(0xFFC1C1C1);
+  static const Color result3TopTextColor = Color(0xFFC1C1C1);
+  static const Color result3TitleColor = Color(0xFF373737);
+  static const Color result3SemiTitleColor = mtGrey800;
+  static const Color result3SemiTitleBoxColor = white;
+  static const Color result3OuterRoundColor = Color(0xFFEFEFEF);
+  static const Color result3MiddleRoundColor = Color(0xFFEFEFEF);
+  static const Color result3InnerRoundColor = Color(0xFFEFEFEF);
+  static const Color result3TextColor = Color(0xFF1B1B1B);
   static const Color result3BoxColor = Color(0xFFE6E6E6);
+
+  static const Color result4BackgroundColor = negative20;
+  static const Color result4TopTextColor = Color(0xFFFFCAD7);
+  static const Color result4TitleColor = white;
+  static const Color result4SemiTitleColor = mtGrey800;
+  static const Color result4SemiTitleBoxColor = negative10;
+  static const Color result4OuterRoundColor = Color(0xFFFF4874);
+  static const Color result4MiddleRoundColor = Color(0xFFFF7495);
+  static const Color result4InnerRoundColor = Color(0xFFFF92AC);
+  static const Color result4TextColor = white;
+  static const Color result4BoxColor = Color(0xFFEE5479);
+
   static const Color result5BackgroundColor = Color(0xFF7B61FF);
-  static const Color result5TextColor = Color(0xFFE0DAFF);
+  static const Color result5TopTextColor = Color(0xFFE0DAFF);
+  static const Color result5TitleColor = white;
+  static const Color result5SemiTitleColor = mtGrey800;
+  static const Color result5SemiTitleBoxColor = Color(0xFFE0DAFF);
+  static const Color result5OuterRoundColor = Color(0xFF8871FF);
+  static const Color result5MiddleRoundColor = Color(0xFF9581FF);
+  static const Color result5InnerRoundColor = Color(0xFFAB9AFF);
+  static const Color result5TextColor = white;
   static const Color result5BoxColor = Color(0xFF856DFF);
+
 // HOME Button Color
 }
