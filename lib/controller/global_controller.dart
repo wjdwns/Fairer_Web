@@ -272,7 +272,6 @@ class GlobalController extends GetxController {
 
       // 전체 String 사이에서 발견한 키워드들 사이의 text에 대한 textSpan 추가
       if (startIndex > spanBoundary) {
-        print(text.substring(spanBoundary, startIndex));
         spans.add(TextSpan(text: text.substring(spanBoundary, startIndex)));
       }
 
@@ -293,25 +292,314 @@ class GlobalController extends GetxController {
   }
 
   getResult() {
-    final counts = <int, int>{};
-    for (var value in answer) {
-      if (counts.containsKey(value)) {
-        counts[value] = counts[value]! + 1;
-      } else {
-        counts[value] = 1;
+    int A = 0;
+    int B = 0;
+    int C = 0;
+    int D = 0;
+    int E = 0;
+    for (var entry in answer.asMap().entries) {
+      var index = entry.key;
+      var value = entry.value;
+      switch (index + 1) {
+        case 1:
+          {
+            switch (value) {
+              case 1:
+                A++;
+                break;
+              case 2:
+                E++;
+                break;
+              case 3:
+                B++;
+                break;
+              case 4:
+                C++;
+                break;
+            }
+            break;
+          }
+        case 2:
+          {
+            switch (value) {
+              case 1:
+                A++;
+                break;
+              case 2:
+                D++;
+                break;
+              case 3:
+                C++;
+                break;
+              case 4:
+                E++;
+                break;
+            }
+            break;
+          }
+        case 3:
+          {
+            switch (value) {
+              case 1:
+                A++;
+                break;
+              case 2:
+                E++;
+                break;
+              case 3:
+                D++;
+                break;
+              case 4:
+                D++;
+                break;
+            }
+            break;
+          }
+        case 4:
+          {
+            switch (value) {
+              case 1:
+                A++;
+                break;
+              case 2:
+                C++;
+                break;
+              case 3:
+                D++;
+                break;
+              case 4:
+                E++;
+                break;
+            }
+            break;
+          }
+        case 5:
+          {
+            switch (value) {
+              case 1:
+                C++;
+                break;
+              case 2:
+                B++;
+                break;
+              case 3:
+                E++;
+                break;
+              case 4:
+                C++;
+                break;
+            }
+            break;
+          }
+        case 6:
+          {
+            switch (value) {
+              case 1:
+                A++;
+                break;
+              case 2:
+                B++;
+                break;
+              case 3:
+                C++;
+                break;
+              case 4:
+                D++;
+                break;
+            }
+            break;
+          }
+        case 7:
+          {
+            switch (value) {
+              case 1:
+                B++;
+                break;
+              case 2:
+                E++;
+                break;
+              case 3:
+                B++;
+                break;
+              case 4:
+                C++;
+                break;
+            }
+            break;
+          }
+        case 8:
+          {
+            switch (value) {
+              case 1:
+                E++;
+                break;
+              case 2:
+                E++;
+                break;
+              case 3:
+                B++;
+                break;
+              case 4:
+                C++;
+                break;
+            }
+            break;
+          }
+        case 9:
+          {
+            switch (value) {
+              case 1:
+                A++;
+                break;
+              case 2:
+                E++;
+                break;
+              case 3:
+                B++;
+                break;
+              case 4:
+                E++;
+                break;
+            }
+            break;
+          }
+        case 10:
+          {
+            switch (value) {
+              case 1:
+                B++;
+                break;
+              case 2:
+                E++;
+                break;
+              case 3:
+                E++;
+                break;
+              case 4:
+                C++;
+                break;
+            }
+            break;
+          }
+        case 11:
+          {
+            switch (value) {
+              case 1:
+                A++;
+                break;
+              case 2:
+                C++;
+                break;
+              case 3:
+                D++;
+                break;
+              case 4:
+                D++;
+                break;
+            }
+            break;
+          }
+        default:
+          break;
       }
     }
-
     int maxCount = 0;
-    int mostFrequentValue = 0;
+    int maxIndex = 0;
 
-    counts.forEach((value, count) {
-      if (count > maxCount) {
-        maxCount = count;
-        mostFrequentValue = value;
-      }
-    });
-    print(mostFrequentValue);
-    return mostFrequentValue;
+    if (A > maxCount) {
+      maxCount = A;
+      maxIndex = 0;
+    }
+    if (B > maxCount) {
+      maxCount = B;
+      maxIndex = 1;
+    }
+    if (C > maxCount) {
+      maxCount = C;
+      maxIndex = 2;
+    }
+    if (D > maxCount) {
+      maxCount = D;
+      maxIndex = 3;
+    }
+    if (E > maxCount) {
+      maxCount = E;
+      maxIndex = 4;
+    }
+
+    print(maxCount);
+    print(maxIndex);
+    return maxIndex;
+  }
+
+  getQuestionImage(int num) {
+    switch (page.value) {
+      case 1:
+        {
+          switch (num) {
+            case 1:
+              return "assets/icons/question1_a.svg";
+            case 2:
+              return "assets/icons/question1_b.svg";
+            case 3:
+              return "assets/icons/question1_c.svg";
+            case 4:
+              return "assets/icons/question1_d.svg";
+          }
+        }
+
+      case 2:
+        {
+          switch (num) {
+            case 1:
+              return "assets/icons/question2_a.svg";
+            case 2:
+              return "assets/icons/question2_b.svg";
+            case 3:
+              return "assets/icons/question2_c.svg";
+            case 4:
+              return "assets/icons/question2_d.svg";
+          }
+        }
+      case 5:
+        {
+          switch (num) {
+            case 1:
+              return "assets/icons/question5_a.svg";
+            case 2:
+              return "assets/icons/question5_b.svg";
+            case 3:
+              return "assets/icons/question5_c.svg";
+            case 4:
+              return "assets/icons/question5_d.svg";
+          }
+        }
+      case 9:
+        {
+          switch (num) {
+            case 1:
+              return "assets/icons/question9_a.svg";
+            case 2:
+              return "assets/icons/question9_b.svg";
+            case 3:
+              return "assets/icons/question9_c.svg";
+            case 4:
+              return "assets/icons/question9_d.svg";
+          }
+        }
+      case 10:
+        {
+          switch (num) {
+            case 1:
+              return "assets/icons/question10_a.svg";
+            case 2:
+              return "assets/icons/question10_b.svg";
+            case 3:
+              return "assets/icons/question10_c.svg";
+            case 4:
+              return "assets/icons/question10_d.svg";
+          }
+        }
+    }
   }
 }

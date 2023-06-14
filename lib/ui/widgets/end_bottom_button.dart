@@ -1,3 +1,4 @@
+import 'package:fairerweb/binding/init_binding.dart';
 import 'package:fairerweb/controller/global_controller.dart';
 import 'package:fairerweb/ui/init_page.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +18,9 @@ class EndBottonButton extends StatelessWidget {
         children: [
           Flexible(
             child: InkWell(
-                onTap: () {
-                  Get.offAll(() => InitPage());
+                onTap: () async {
+                  await Get.deleteAll();
+                  await Get.offAll(() => InitPage(), binding: InitBinding());
                 },
                 child: Container(
                   decoration: BoxDecoration(color: Palette.fairerBlue, borderRadius: BorderRadius.circular(8)),

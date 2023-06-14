@@ -39,7 +39,7 @@ class GridQuestions extends StatelessWidget {
                           "answer_a".tr,
                           style: CustomTextStyle.Body1,
                         ),
-                        Expanded(child: Center(child: SvgPicture.asset("assets/icons/question1_a.svg"))),
+                        Expanded(child: Center(child: SvgPicture.asset(controller.getQuestionImage(1)))),
                         Text(
                           controller.getAnswerA(),
                           style: CustomTextStyle.Title1,
@@ -73,7 +73,7 @@ class GridQuestions extends StatelessWidget {
                           "answer_b".tr,
                           style: CustomTextStyle.Body1,
                         ),
-                        Expanded(child: Center(child: SvgPicture.asset("assets/icons/question1_b.svg"))),
+                        Expanded(child: Center(child: SvgPicture.asset(controller.getQuestionImage(2)))),
                         Text(
                           controller.getAnswerB(),
                           style: CustomTextStyle.Title1,
@@ -112,7 +112,7 @@ class GridQuestions extends StatelessWidget {
                           "answer_c".tr,
                           style: CustomTextStyle.Body1,
                         ),
-                        Expanded(child: Center(child: SvgPicture.asset("assets/icons/question1_c.svg"))),
+                        Expanded(child: Center(child: SvgPicture.asset(controller.getQuestionImage(3)))),
                         Text(
                           controller.getAnswerC(),
                           style: CustomTextStyle.Title1,
@@ -146,7 +146,7 @@ class GridQuestions extends StatelessWidget {
                           "answer_d".tr,
                           style: CustomTextStyle.Body1,
                         ),
-                        Expanded(child: Center(child: SvgPicture.asset("assets/icons/question1_d.svg"))),
+                        Expanded(child: Center(child: SvgPicture.asset(controller.getQuestionImage(4)))),
                         Text(
                           controller.getAnswerD(),
                           style: CustomTextStyle.Title1,

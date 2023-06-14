@@ -28,7 +28,15 @@ class QuestionPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SvgPicture.asset("assets/icons/ic_back.svg", width: 24, height: 24),
+                  GestureDetector(
+                      onTap: () {
+                        if (controller.page.value > 1) {
+                          controller.page.value--;
+                        } else {
+                          Get.back();
+                        }
+                      },
+                      child: SvgPicture.asset("assets/icons/ic_back.svg", width: 24, height: 24)),
                   const SizedBox(
                     height: 28,
                   ),
