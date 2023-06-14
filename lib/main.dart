@@ -19,7 +19,7 @@ class FairerWeb extends StatelessWidget {
       locale: const Locale('ko', 'KR'),
       translationsKeys: AppTranslation.translations,
       debugShowCheckedModeBanner: false,
-      title: 'app_title'.tr,
+      title: 'fairer',
       theme: appThemeData,
       initialBinding: InitBinding(),
       home: InitPage(),
