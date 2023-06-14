@@ -12,7 +12,7 @@ class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final result = controller.getResult();
-    final ResultColorModel resultColorModel = setResultColor(result);
+    final ResultModel resultColorModel = setResultColor(result);
     return Scaffold(
       backgroundColor: resultColorModel.backgroundColor,
       bottomSheet: Container(
@@ -138,75 +138,100 @@ class ResultPage extends StatelessWidget {
 
   setResultColor(int result) {
     if (result == 1) {
-      return ResultColorModel(
-        backgroundColor: Palette.result1BackgroundColor,
-        topTextColor: Palette.result1TopTextColor,
-        titleColor: Palette.result1TitleColor,
-        semiTitleColor: Palette.result1SemiTitleColor,
-        semiTitleBoxColor: Palette.result1SemiTitleBoxColor,
-        outerRoundColor: Palette.result1OuterRoundColor,
-        middleRoundColor: Palette.result1MiddleRoundColor,
-        innerRoundColor: Palette.result1InnerRoundColor,
-        textColor: Palette.result1TextColor,
-        boxColor: Palette.result1BoxColor,
-        image: 'assets/icons/ic_result1.svg',
-      );
+      return ResultModel(
+          backgroundColor: Palette.result1BackgroundColor,
+          topTextColor: Palette.result1TopTextColor,
+          titleColor: Palette.result1TitleColor,
+          semiTitleColor: Palette.result1SemiTitleColor,
+          semiTitleBoxColor: Palette.result1SemiTitleBoxColor,
+          outerRoundColor: Palette.result1OuterRoundColor,
+          middleRoundColor: Palette.result1MiddleRoundColor,
+          innerRoundColor: Palette.result1InnerRoundColor,
+          textColor: Palette.result1TextColor,
+          boxColor: Palette.result1BoxColor,
+          image: 'assets/icons/ic_result1.svg',
+          titleText: 'end_page_type_title1'.tr,
+          semiTitleText: 'end_page_type_semi_title1'.tr,
+          text1: 'result1_text1'.tr,
+          text2: 'result1_text2'.tr,
+          text1Bold: 'result1_text1_bold'.tr,
+          text2Bold: 'result1_text2_bold'.tr);
     } else if (result == 2) {
-      return ResultColorModel(
-        backgroundColor: Palette.result2BackgroundColor,
-        topTextColor: Palette.result2TopTextColor,
-        titleColor: Palette.result2TitleColor,
-        semiTitleColor: Palette.result2SemiTitleColor,
-        semiTitleBoxColor: Palette.result2SemiTitleBoxColor,
-        outerRoundColor: Palette.result2OuterRoundColor,
-        middleRoundColor: Palette.result2MiddleRoundColor,
-        innerRoundColor: Palette.result2InnerRoundColor,
-        textColor: Palette.result2TextColor,
-        boxColor: Palette.result2BoxColor,
-        image: 'assets/icons/ic_result2.svg',
-      );
+      return ResultModel(
+          backgroundColor: Palette.result2BackgroundColor,
+          topTextColor: Palette.result2TopTextColor,
+          titleColor: Palette.result2TitleColor,
+          semiTitleColor: Palette.result2SemiTitleColor,
+          semiTitleBoxColor: Palette.result2SemiTitleBoxColor,
+          outerRoundColor: Palette.result2OuterRoundColor,
+          middleRoundColor: Palette.result2MiddleRoundColor,
+          innerRoundColor: Palette.result2InnerRoundColor,
+          textColor: Palette.result2TextColor,
+          boxColor: Palette.result2BoxColor,
+          image: 'assets/icons/ic_result2.svg',
+          titleText: 'end_page_type_title2'.tr,
+          semiTitleText: 'end_page_type_semi_title2'.tr,
+          text1: 'result2_text1'.tr,
+          text2: 'result2_text2'.tr,
+          text1Bold: 'result2_text1_bold'.tr,
+          text2Bold: 'result2_text2_bold'.tr);
     } else if (result == 3) {
-      return ResultColorModel(
-        backgroundColor: Palette.result3BackgroundColor,
-        topTextColor: Palette.result3TopTextColor,
-        titleColor: Palette.result3TitleColor,
-        semiTitleColor: Palette.result3SemiTitleColor,
-        semiTitleBoxColor: Palette.result3SemiTitleBoxColor,
-        outerRoundColor: Palette.result3OuterRoundColor,
-        middleRoundColor: Palette.result3MiddleRoundColor,
-        innerRoundColor: Palette.result3InnerRoundColor,
-        textColor: Palette.result3TextColor,
-        boxColor: Palette.result3BoxColor,
-        image: 'assets/icons/ic_result3.svg',
-      );
+      return ResultModel(
+          backgroundColor: Palette.result3BackgroundColor,
+          topTextColor: Palette.result3TopTextColor,
+          titleColor: Palette.result3TitleColor,
+          semiTitleColor: Palette.result3SemiTitleColor,
+          semiTitleBoxColor: Palette.result3SemiTitleBoxColor,
+          outerRoundColor: Palette.result3OuterRoundColor,
+          middleRoundColor: Palette.result3MiddleRoundColor,
+          innerRoundColor: Palette.result3InnerRoundColor,
+          textColor: Palette.result3TextColor,
+          boxColor: Palette.result3BoxColor,
+          image: 'assets/icons/ic_result3.svg',
+          titleText: 'end_page_type_title3'.tr,
+          semiTitleText: 'end_page_type_semi_title3'.tr,
+          text1: 'result3_text1'.tr,
+          text2: 'result3_text2'.tr,
+          text1Bold: 'result3_text1_bold'.tr,
+          text2Bold: 'result3_text2_bold'.tr);
     } else if (result == 4) {
-      return ResultColorModel(
-        backgroundColor: Palette.result4BackgroundColor,
-        topTextColor: Palette.result4TopTextColor,
-        titleColor: Palette.result4TitleColor,
-        semiTitleColor: Palette.result4SemiTitleColor,
-        semiTitleBoxColor: Palette.result4SemiTitleBoxColor,
-        outerRoundColor: Palette.result4OuterRoundColor,
-        middleRoundColor: Palette.result4MiddleRoundColor,
-        innerRoundColor: Palette.result4InnerRoundColor,
-        textColor: Palette.result4TextColor,
-        boxColor: Palette.result4BoxColor,
-        image: 'assets/icons/ic_result4.svg',
-      );
+      return ResultModel(
+          backgroundColor: Palette.result4BackgroundColor,
+          topTextColor: Palette.result4TopTextColor,
+          titleColor: Palette.result4TitleColor,
+          semiTitleColor: Palette.result4SemiTitleColor,
+          semiTitleBoxColor: Palette.result4SemiTitleBoxColor,
+          outerRoundColor: Palette.result4OuterRoundColor,
+          middleRoundColor: Palette.result4MiddleRoundColor,
+          innerRoundColor: Palette.result4InnerRoundColor,
+          textColor: Palette.result4TextColor,
+          boxColor: Palette.result4BoxColor,
+          image: 'assets/icons/ic_result4.svg',
+          titleText: 'end_page_type_title4'.tr,
+          semiTitleText: 'end_page_type_semi_title4'.tr,
+          text1: 'result4_text1'.tr,
+          text2: 'result4_text2'.tr,
+          text1Bold: 'result4_text1_bold'.tr,
+          text2Bold: 'result4_text2_bold'.tr);
     } else {
-      return ResultColorModel(
-        backgroundColor: Palette.result5BackgroundColor,
-        topTextColor: Palette.result5TopTextColor,
-        titleColor: Palette.result5TitleColor,
-        semiTitleColor: Palette.result5SemiTitleColor,
-        semiTitleBoxColor: Palette.result5SemiTitleBoxColor,
-        outerRoundColor: Palette.result5OuterRoundColor,
-        middleRoundColor: Palette.result5MiddleRoundColor,
-        innerRoundColor: Palette.result5InnerRoundColor,
-        textColor: Palette.result5TextColor,
-        boxColor: Palette.result5BoxColor,
-        image: 'assets/icons/ic_result5.svg',
-      );
+      return ResultModel(
+          backgroundColor: Palette.result5BackgroundColor,
+          topTextColor: Palette.result5TopTextColor,
+          titleColor: Palette.result5TitleColor,
+          semiTitleColor: Palette.result5SemiTitleColor,
+          semiTitleBoxColor: Palette.result5SemiTitleBoxColor,
+          outerRoundColor: Palette.result5OuterRoundColor,
+          middleRoundColor: Palette.result5MiddleRoundColor,
+          innerRoundColor: Palette.result5InnerRoundColor,
+          textColor: Palette.result5TextColor,
+          boxColor: Palette.result5BoxColor,
+          image: 'assets/icons/ic_result5.svg',
+          titleText: 'end_page_type_title5'.tr,
+          semiTitleText: 'end_page_type_semi_title5'.tr,
+          text1: 'result5_text5'.tr,
+          text2: 'result5_text2'.tr,
+          text1Bold: 'result5_text1_bold'.tr,
+          text2Bold: 'result5_text2_bold'.tr);
     }
   }
 }

@@ -1,7 +1,6 @@
-import 'package:fairerweb/config/app_color.dart';
 import 'package:flutter/material.dart';
 
-class ResultColorModel {
+class ResultModel {
   Color backgroundColor;
   Color topTextColor;
   Color titleColor;
@@ -13,8 +12,14 @@ class ResultColorModel {
   Color textColor;
   Color boxColor;
   String image;
+  String titleText;
+  String semiTitleText;
+  String text1;
+  String text2;
+  String text1Bold;
+  String text2Bold;
 
-  ResultColorModel(
+  ResultModel(
       {required this.backgroundColor,
       required this.topTextColor,
       required this.titleColor,
@@ -25,5 +30,11 @@ class ResultColorModel {
       required this.innerRoundColor,
       required this.textColor,
       required this.boxColor,
-      required this.image});
+      required this.image,
+      required this.titleText,
+      required this.semiTitleText,
+      required this.text1,
+      required this.text2,
+      required this.text1Bold,
+      required this.text2Bold});
 }
