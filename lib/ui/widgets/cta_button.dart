@@ -13,10 +13,12 @@ class CTAButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        if (controller.page.value == 11) {
-          Get.to(() => ResultPage());
-        } else {
-          controller.page.value++;
+        if (isEnable) {
+          if (controller.page.value == 11) {
+            Get.to(() => ResultPage());
+          } else {
+            controller.page.value++;
+          }
         }
       },
       child: Container(

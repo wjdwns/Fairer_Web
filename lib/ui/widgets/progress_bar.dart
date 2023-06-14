@@ -17,8 +17,10 @@ class ProgressBar extends StatelessWidget {
         children: [
           Flexible(
               flex: flexValue,
-              child: Container(
+              child: AnimatedContainer(
+                width: (Get.width / 11) * flexValue,
                 color: Palette.fairerBlue,
+                duration: Duration(milliseconds: 300),
               )),
           Flexible(
               flex: 11 - flexValue,
