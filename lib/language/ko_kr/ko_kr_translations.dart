@@ -54,7 +54,7 @@ final Map<String, String> koKR = {
   'page9_answer2': '빨래',
   'page9_answer3': '청소기 돌리기',
   'page9_answer4': '무엇이든\n잘할 수 있어요',
-  'page10_question': '-',
+  'page10_question': '집안일의 근본은 무엇이라고 생각하시나요?',
   'page10_answer1': '청결유지',
   'page10_answer2': '분리수거',
   'page10_answer3': '쓰레기 처리',
