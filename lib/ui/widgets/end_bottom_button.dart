@@ -4,6 +4,7 @@ import 'package:fairerweb/controller/global_controller.dart';
 import 'package:fairerweb/ui/init_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../../config/app_color.dart';
 
@@ -46,7 +47,7 @@ class EndBottomButton extends StatelessWidget {
           ),
           Flexible(
             child: InkWell(
-                onTap: () {},
+                onTap: () {Share.share("https://fairer.vercel.app/");},
                 child: Container(
                   decoration: BoxDecoration(
                       color: colorValue ? Palette.fairerBlue : Palette.white, borderRadius: BorderRadius.circular(8)),
