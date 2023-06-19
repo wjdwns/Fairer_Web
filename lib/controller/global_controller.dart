@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:fairerweb/config/app_color.dart';
 import 'package:fairerweb/config/app_theme.dart';
 import 'package:flutter/cupertino.dart';
@@ -519,25 +521,49 @@ class GlobalController extends GetxController {
     int maxCount = 0;
     int maxIndex = 0;
 
-    if (A > maxCount) {
-      maxCount = A;
-      maxIndex = 0;
+    int randomizeMaxIndex(int currentMaxIndex, int newIndex) {
+      return Random().nextBool() ? currentMaxIndex : newIndex;
     }
-    if (B > maxCount) {
-      maxCount = B;
-      maxIndex = 1;
+
+    if (A >= maxCount) {
+      if (A > maxCount) {
+        maxCount = A;
+        maxIndex = 0;
+      } else {
+        maxIndex = randomizeMaxIndex(maxIndex, 0);
+      }
     }
-    if (C > maxCount) {
-      maxCount = C;
-      maxIndex = 2;
+    if (B >= maxCount) {
+      if (B > maxCount) {
+        maxCount = B;
+        maxIndex = 1;
+      } else {
+        maxIndex = randomizeMaxIndex(maxIndex, 1);
+      }
     }
-    if (D > maxCount) {
-      maxCount = D;
-      maxIndex = 3;
+    if (C >= maxCount) {
+      if (C > maxCount) {
+        maxCount = C;
+        maxIndex = 2;
+      } else {
+        maxIndex = randomizeMaxIndex(maxIndex, 2);
+      }
     }
-    if (E > maxCount) {
-      maxCount = E;
-      maxIndex = 4;
+    if (D >= maxCount) {
+      if (D > maxCount) {
+        maxCount = D;
+        maxIndex = 3;
+      } else {
+        maxIndex = randomizeMaxIndex(maxIndex, 3);
+      }
+    }
+    if (E >= maxCount) {
+      if (E > maxCount) {
+        maxCount = E;
+        maxIndex = 4;
+      } else {
+        maxIndex = randomizeMaxIndex(maxIndex, 4);
+      }
     }
 
     print(maxCount);
