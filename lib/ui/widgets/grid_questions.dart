@@ -38,11 +38,13 @@ class GridQuestions extends StatelessWidget {
                         Text(
                           "answer_a".tr,
                           style: CustomTextStyle.Body1,
+                          textAlign: TextAlign.center,
                         ),
                         Expanded(child: Center(child: SvgPicture.asset(controller.getQuestionImage(1)))),
                         Text(
                           controller.getAnswerA(),
                           style: CustomTextStyle.Title1,
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),
@@ -77,6 +79,7 @@ class GridQuestions extends StatelessWidget {
                         Text(
                           controller.getAnswerB(),
                           style: CustomTextStyle.Title1,
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),
@@ -116,6 +119,7 @@ class GridQuestions extends StatelessWidget {
                         Text(
                           controller.getAnswerC(),
                           style: CustomTextStyle.Title1,
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),
@@ -150,6 +154,7 @@ class GridQuestions extends StatelessWidget {
                         Text(
                           controller.getAnswerD(),
                           style: CustomTextStyle.Title1,
+                          textAlign: TextAlign.center,
                         ),
                       ],
                     ),
