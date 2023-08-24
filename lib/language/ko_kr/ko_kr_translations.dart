@@ -106,4 +106,7 @@ final Map<String, String> koKR = {
   'result5_text2': '그들은 책임감이 강하며, 가족이나 친구들에게 필요한 지원을 적극적으로 제공합니다.',
   'result5_text1_bold': '생활의 모든 분야를 능숙하게',
   'result5_text2_bold': '그들은 책임감이 강하며',
+
+  'result_app_store': '앱스토어 바로가기',
+  'result_play_store': '구글플레이 바로가기',
 };

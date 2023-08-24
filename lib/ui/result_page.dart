@@ -6,6 +6,7 @@ import 'package:fairerweb/ui/widgets/end_bottom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ResultPage extends StatelessWidget {
   final controller = Get.find<GlobalController>();
@@ -140,6 +141,74 @@ class ResultPage extends StatelessWidget {
                       )
                     ],
                   ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      Material(
+                          elevation: 8,
+                          borderRadius: BorderRadius.circular(6),
+                          child: InkWell(
+                            onTap: () {
+                              appStoreLaunchUrl();
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(color: Palette.white, borderRadius: BorderRadius.circular(6)),
+                              padding: const EdgeInsets.fromLTRB(8, 7, 14, 7),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    "assets/icons/ic_app_store.png",
+                                    fit: BoxFit.fill,
+                                  ),
+                                  const SizedBox(
+                                    width: 8,
+                                  ),
+                                  Text(
+                                    "result_app_store".tr,
+                                    style: const TextStyle(
+                                        fontFamily: CustomTextStyle.SemiBold, fontSize: 10, color: Color(0xFF343434)),
+                                  )
+                                ],
+                              ),
+                            ),
+                          )),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      Material(
+                          elevation: 8,
+                          borderRadius: BorderRadius.circular(6),
+                          child: InkWell(
+                            onTap: () {
+                              playStoreLaunchUrl();
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(color: Palette.white, borderRadius: BorderRadius.circular(6)),
+                              padding: const EdgeInsets.fromLTRB(8, 7, 9, 7),
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Image.asset(
+                                    "assets/icons/ic_play_store.png",
+                                    fit: BoxFit.fill,
+                                  ),
+                                  const SizedBox(
+                                    width: 8,
+                                  ),
+                                  Text(
+                                    "result_play_store".tr,
+                                    style: const TextStyle(
+                                        fontFamily: CustomTextStyle.SemiBold, fontSize: 10, color: Color(0xFF343434)),
+                                  )
+                                ],
+                              ),
+                            ),
+                          )),
+                    ],
+                  )
                 ],
               ),
             ),
@@ -271,4 +340,18 @@ class CirclePainter extends CustomPainter {
   bool shouldRepaint(CustomPainter oldDelegate) {
     return false;
   }
+}
+
+playStoreLaunchUrl() {
+  final url = Uri(
+      scheme: 'https',
+      host: 'play.google.com',
+      path: 'store/apps/details',
+      queryParameters: {"id": 'com.depromeet.housekeeper'});
+  launchUrl(url);
+}
+
+appStoreLaunchUrl() {
+  final url = Uri(scheme: 'https', host: 'apps.apple.com', path: 'kr/app/페어러-fairer/id6451104062');
+  launchUrl(url);
 }
