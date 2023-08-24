@@ -3,6 +3,7 @@ import 'package:fairerweb/config/app_theme.dart';
 import 'package:fairerweb/controller/global_controller.dart';
 import 'package:fairerweb/model/result_color_model.dart';
 import 'package:fairerweb/ui/widgets/end_bottom_button.dart';
+import 'package:fairerweb/ui/widgets/iframe_ad.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -212,6 +213,10 @@ class ResultPage extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(
+              height: 140,
+              child: IframeAd(),
+            )
           ],
         ),
       ),
