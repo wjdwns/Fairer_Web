@@ -213,8 +213,11 @@ class ResultPage extends StatelessWidget {
                 ],
               ),
             ),
+            const SizedBox(
+              height: 50,
+            ),
             SizedBox(
-              height: 140,
+              height: 100,
               child: IframeAd(),
             )
           ],
