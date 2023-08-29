@@ -143,71 +143,29 @@ class ResultPage extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 18,
                   ),
                   Row(
                     children: [
-                      Material(
-                          elevation: 8,
-                          borderRadius: BorderRadius.circular(6),
-                          child: InkWell(
-                            onTap: () {
-                              appStoreLaunchUrl();
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(color: Palette.white, borderRadius: BorderRadius.circular(6)),
-                              padding: const EdgeInsets.fromLTRB(8, 7, 14, 7),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    "assets/icons/ic_app_store.png",
-                                    fit: BoxFit.fill,
-                                  ),
-                                  const SizedBox(
-                                    width: 8,
-                                  ),
-                                  Text(
-                                    "result_app_store".tr,
-                                    style: const TextStyle(
-                                        fontFamily: CustomTextStyle.SemiBold, fontSize: 10, color: Color(0xFF343434)),
-                                  )
-                                ],
-                              ),
-                            ),
-                          )),
-                      const SizedBox(
-                        width: 8,
+                      InkWell(
+                        onTap: () {
+                          appStoreLaunchUrl();
+                        },
+                        child: Image.asset(
+                          "assets/icons/ic_app_store.png",
+                        ),
                       ),
-                      Material(
-                          elevation: 8,
-                          borderRadius: BorderRadius.circular(6),
-                          child: InkWell(
-                            onTap: () {
-                              playStoreLaunchUrl();
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(color: Palette.white, borderRadius: BorderRadius.circular(6)),
-                              padding: const EdgeInsets.fromLTRB(8, 7, 9, 7),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    "assets/icons/ic_play_store.png",
-                                    fit: BoxFit.fill,
-                                  ),
-                                  const SizedBox(
-                                    width: 8,
-                                  ),
-                                  Text(
-                                    "result_play_store".tr,
-                                    style: const TextStyle(
-                                        fontFamily: CustomTextStyle.SemiBold, fontSize: 10, color: Color(0xFF343434)),
-                                  )
-                                ],
-                              ),
-                            ),
-                          )),
+                      const SizedBox(
+                        width: 16,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          playStoreLaunchUrl();
+                        },
+                        child: Image.asset(
+                          "assets/icons/ic_play_store.png",
+                        ),
+                      ),
                     ],
                   )
                 ],
